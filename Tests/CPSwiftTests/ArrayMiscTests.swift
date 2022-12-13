@@ -44,19 +44,6 @@ final class ArrayMiscTests: XCTestCase {
             let arr = [1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 5, 6, 6, 6]
             XCTAssertEqual(arr.lowerBound(of: 4), 10)
         }
-        do {
-            let arr: [String] = ["a", "b", "c", "d", "e" ]
-            XCTAssertEqual(arr.lowerBound(of: "c"), 2)
-        }
-        do {
-            let arr: [String] = ["The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
-            XCTAssertEqual(arr.lowerBound(of: "lazy"), 5)
-        }
-        do {
-            // cf. https://en.wikipedia.org/wiki/James_while_John_had_had_had_had_had_had_had_had_had_had_had_a_better_effect_on_the_teacher
-            let arr: [String] = ["James", "while", "John", "had", "had", "had", "had", "had", "had", "had", "had", "had", "had", "had", "a", "better", "effect", "on", "the", "teacher"]
-            XCTAssertEqual(arr.lowerBound(of: "had"), 3)
-        }
     }
 
     func testUpperBound() {
@@ -67,19 +54,6 @@ final class ArrayMiscTests: XCTestCase {
         do {
             let arr = [1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 5, 6, 6, 6]
             XCTAssertEqual(arr.upperBound(of: 4), 12)
-        }
-        do {
-            let arr: [String] = ["a", "b", "c", "d", "e" ]
-            XCTAssertEqual(arr.upperBound(of: "c"), 3)
-        }
-        do {
-            let arr: [String] = ["The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
-            XCTAssertEqual(arr.upperBound(of: "lazy"), 9)
-        }
-        do {
-            // cf. https://en.wikipedia.org/wiki/James_while_John_had_had_had_had_had_had_had_had_had_had_had_a_better_effect_on_the_teacher
-            let arr: [String] = ["James", "while", "John", "had", "had", "had", "had", "had", "had", "had", "had", "had", "had", "had", "a", "better", "effect", "on", "the", "teacher"]
-            XCTAssertEqual(arr.upperBound(of: "had"), 17)
         }
     }
 
