@@ -5,6 +5,20 @@ extension Int {
         Int(Double(self).squareRoot())
     }
 
+    func pow(_ ex: Int, mod: Int? = nil) -> Int {
+        var res = 1, n = ex, a = self
+        while n > 0 {
+            if (n & 1) != 0 {
+                res *= a
+                if let m = mod { res %= m }
+            }
+            a *= a
+            if let m = mod { a %= m }
+            n >>= 1
+        }
+        return res
+    }
+
     func divisors() -> [Int] {
         precondition(self >= 1)
         var result = [Int]()
