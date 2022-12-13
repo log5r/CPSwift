@@ -1,10 +1,5 @@
 import Foundation
 
-/*
- force-unwrapping については議論の余地があるが、バックトレースで辿れるように分けたつもり...
- */
-
-
 extension Character {
     func asciiIntValue() -> Int? {
         guard let ascv = asciiValue else { return nil }
