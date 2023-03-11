@@ -11,7 +11,7 @@ extension Int {
         else { result = (value, self) }
         var (a, b) = result
         var res = 0
-        while b > 1 {
+        while b > 0 {
             if (b & 1) != 0 { res += a }
             if let m = mod { res %= m }
             if let m = mod { a %= m }
@@ -19,7 +19,7 @@ extension Int {
             if let m = mod { a %= m }
             b >>= 1
         }
-        return res + a
+        return res
     }
 
     func pow(_ ex: Int, mod: Int? = nil) -> Int {
