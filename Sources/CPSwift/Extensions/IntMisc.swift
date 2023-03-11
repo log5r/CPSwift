@@ -4,6 +4,23 @@ extension Int {
     func sqrt() -> Int {
         Int(Double(self).squareRoot())
     }
+    
+    func prod(_ value: Int, mod: Int? = nil) -> Int {
+        let result: (Int, Int)
+        if value > self { result = (self, value)}
+        else { result = (value, self) }
+        var (a, b) = result
+        var res = 0
+        while b > 1 {
+            if (b & 1) != 0 { res += a }
+            if let m = mod { res %= m }
+            if let m = mod { a %= m }
+            a *= 2
+            if let m = mod { a %= m }
+            b >>= 1
+        }
+        return res + a
+    }
 
     func pow(_ ex: Int, mod: Int? = nil) -> Int {
         var res = 1, n = ex, a = self
