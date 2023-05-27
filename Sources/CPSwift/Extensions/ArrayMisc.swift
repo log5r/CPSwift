@@ -9,6 +9,12 @@ extension Array {
     }
 }
 
+extension Array where Element: CustomStringConvertible {
+    func contestDescription(separator: String = " ") -> String {
+        self.map(\.description).joined(separator: separator)
+    }
+}
+
 extension Array where Element: Comparable {
 
     func lowerBound(of item: Element) -> Index {

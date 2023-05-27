@@ -150,4 +150,12 @@ final class ArrayMiscTests: XCTestCase {
             XCTAssertEqual(arr.reversedIndexMap(), res)
         }
     }
+
+    func testContestDescription() {
+        let arr: [String] = ["The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+        XCTAssertEqual(arr.contestDescription(), "The quick brown fox jumps over the lazy dog")
+
+        let intArr: [Int] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 2]
+        XCTAssertEqual(intArr.contestDescription(), "3 1 4 1 5 9 2 6 5 2")
+    }
 }
