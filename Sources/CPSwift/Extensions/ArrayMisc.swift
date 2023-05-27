@@ -1,5 +1,3 @@
-import Foundation
-
 extension Array {
     func cumulate(from start: Element, _ method: (Element, Element) -> Element) -> [Element] {
         guard count > 0 else { return []}
