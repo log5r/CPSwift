@@ -1,4 +1,11 @@
 extension Int {
+
+    func zeroStartRange() -> Range<Int> { 0..<self }
+    func oneStartRange() -> Range<Int> { 1..<self }
+    func timesLoop(_ f:(Int) -> ()) {
+        for i in 0..<self { f(i) }
+    }
+
     func sqrt() -> Int {
         Int(Double(self).squareRoot())
     }

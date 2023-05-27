@@ -2,6 +2,31 @@ import XCTest
 @testable import CPSwift
 
 final class IntMiscTests: XCTestCase {
+
+    func testRange() {
+        do {
+            var arr = [Int]()
+            for i in 10.zeroStartRange() {
+                arr.append(i)
+            }
+            XCTAssertEqual(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        }
+        do {
+            var arr = [Int]()
+            for i in 10.oneStartRange() {
+                arr.append(i)
+            }
+            XCTAssertEqual(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+        }
+        do {
+            var arr = [Int]()
+            10.timesLoop { i in
+                arr.append(i)
+            }
+            XCTAssertEqual(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        }
+    }
+
     func testSqrt() {
         XCTAssertEqual(25.sqrt(), 5)
         XCTAssertEqual(5.sqrt(), 2)
