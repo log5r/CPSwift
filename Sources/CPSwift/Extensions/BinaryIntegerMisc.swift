@@ -1,5 +1,3 @@
-import Foundation
-
 extension BinaryInteger {
 
     func binaryDescription(bitWidth: Int? = nil) -> String {

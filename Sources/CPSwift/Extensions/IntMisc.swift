@@ -1,5 +1,3 @@
-import Foundation
-
 extension Int {
     func sqrt() -> Int {
         Int(Double(self).squareRoot())
