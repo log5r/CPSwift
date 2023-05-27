@@ -1,5 +1,3 @@
-import Foundation
-
 extension Character {
     func asciiIntValue() -> Int? {
         guard let ascv = asciiValue else { return nil }
@@ -25,6 +23,16 @@ extension String {
             res.append(vav)
         }
         return res
+    }
+    subscript(_ index: Int) -> Character {
+        get {
+            values()[index]
+        }
+        set {
+            var buf = values()
+            buf[index] = newValue
+            self = String(buf)
+        }
     }
     func bitArray() -> [Bool]? {
         var res = [Bool]()

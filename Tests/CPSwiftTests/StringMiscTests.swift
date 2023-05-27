@@ -71,4 +71,10 @@ final class StringMiscTests: XCTestCase {
         let estr = "00110101001O10010"
         XCTAssertNil(estr.bitArray())
     }
+
+    func testPartialEdit() {
+        var str = "ABCDE"
+        str[3] = "s"
+        XCTAssertEqual(str, "ABCsE")
+    }
 }
