@@ -1,6 +1,4 @@
 // atcoder-toolsに依存している限り使用しないのでまだ雑
-import Foundation
-
 struct CINStream {
     private var tokens = [String]()
     private var idx = 0
