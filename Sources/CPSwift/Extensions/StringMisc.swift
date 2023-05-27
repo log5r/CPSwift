@@ -16,6 +16,9 @@ extension Character {
 
 extension String {
     func values() -> [Character] { Array(self) }
+    func makeIterator() -> StringIterator {
+        StringIterator(string: self)
+    }
     func asciiIntValues() -> [Int]? {
         var res = [Int]()
         for v in values() {
@@ -44,5 +47,16 @@ extension String {
             }
         }
         return res
+    }
+}
+
+struct StringIterator: IteratorProtocol {
+    let string: String
+    var index: Int = 0
+    public mutating func next() -> Character? {
+        let buf = string.values()
+        guard index < buf.count else { return nil }
+        defer { index += 1 }
+        return buf[index]
     }
 }
