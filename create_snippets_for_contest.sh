@@ -8,5 +8,5 @@ done
 
 for file in $(ls ./Sources/CPSwift/Wrappers/)
 do
-  cat "./Sources/CPSwift/Extensions/$file" >> snippets.swift
+  cat "./Sources/CPSwift/Wrappers/$file" >> snippets.swift
 done
