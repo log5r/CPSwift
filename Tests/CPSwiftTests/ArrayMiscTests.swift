@@ -110,6 +110,36 @@ final class ArrayMiscTests: XCTestCase {
         }
     }
 
+    func testFirstMaxIndex() {
+        do {
+            let arr = [1, 4, 2, 8, 5, 7, 1, 4, 2, 8, 5, 7]
+            XCTAssertEqual(arr.firstMaxIndex()!, 3)
+        }
+        do {
+            let arr = [1, 4, 2, 8, 5, 7, 1, 4, 2, 8, 5, 7]
+            XCTAssertEqual(arr.firstMaxIndex(after: 4)!, 9)
+        }
+        do {
+            let arr = [1, 4, 2, 8, 5, 7]
+            XCTAssertNil(arr.firstMaxIndex(after: 4))
+        }
+    }
+
+    func testFirstMinIndex() {
+        do {
+            let arr = [1, 4, 2, 8, 5, 7, 1, 4, 2, 8, 5, 7]
+            XCTAssertEqual(arr.firstMinIndex()!, 0)
+        }
+        do {
+            let arr = [1, 4, 2, 8, 5, 7, 1, 4, 2, 8, 5, 7]
+            XCTAssertEqual(arr.firstMinIndex(after: 4)!, 6)
+        }
+        do {
+            let arr = [1, 4, 2, 8, 5, 7]
+            XCTAssertNil(arr.firstMinIndex(after: 4))
+        }
+    }
+
     func testGroupByCount() {
         do {
             let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
