@@ -48,6 +48,16 @@ extension Array where Element: Comparable {
         }
         return res
     }
+
+    func firstMaxIndex(after index: Int = 0) -> Int? {
+        guard let maxValue = self.max() else { return nil }
+        return self[index..<self.count].firstIndex(of: maxValue)
+    }
+
+    func firstMinIndex(after index: Int = 0) -> Int? {
+        guard let minValue = self.min() else { return nil }
+        return self[index..<self.count].firstIndex(of: minValue)
+    }
 }
 
 extension Array where Element: Hashable {
