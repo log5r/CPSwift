@@ -12,11 +12,17 @@ final class IntMiscTests: XCTestCase {
             XCTAssertEqual(arr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         }
         do {
+            XCTAssertNoThrow((-1).zeroStartRange())
+        }
+        do {
             var arr = [Int]()
             for i in 10.oneStartRange() {
                 arr.append(i)
             }
             XCTAssertEqual(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+        }
+        do {
+            XCTAssertNoThrow((-1).oneStartRange())
         }
         do {
             var arr = [Int]()
