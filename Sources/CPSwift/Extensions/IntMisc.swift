@@ -1,7 +1,7 @@
 extension Int {
 
-    func zeroStartRange() -> Range<Int> { 0..<self }
-    func oneStartRange() -> Range<Int> { 1..<self }
+    func zeroStartRange() -> Range<Int> { 0..<(self > 0 ? self : 0) }
+    func oneStartRange() -> Range<Int> { 1..<(self > 1 ? self : 1) }
     func timesLoop(_ f:(Int) -> ()) {
         for i in 0..<self { f(i) }
     }
